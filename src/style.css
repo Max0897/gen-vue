@@ -1,0 +1,23 @@
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #1677ff;
+  height: 2px;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #1677ff, 0 0 5px #1677ff;
+}
+
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: all 0.25s ease;
+}
+
+.fade-slide-enter-from,
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(6px);
+}
