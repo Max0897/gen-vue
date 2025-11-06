@@ -24,7 +24,7 @@
         </a-card>
       </a-col>
       <a-col :xs="24" :lg="8">
-        <a-card title="订单统计" style="border-radius: 12px;height: 100%;">
+        <a-card title="销量排名" style="border-radius: 12px;height: 100%;">
           <template #extra>
             <a-space>
               <a-button type="link" @click="refreshData">
@@ -32,7 +32,7 @@
               </a-button>
             </a-space>
           </template>
-          <a-table :columns="orderColumns" :data-source="orderStats" :pagination="false" row-key="type" size="small" />
+          <a-table :columns="productColumns" :data-source="productStats" :pagination="false" row-key="name" size="small" />
         </a-card>
       </a-col>
       <a-col :xs="24" :lg="8">
@@ -114,6 +114,21 @@ const orderStats = computed(() => [
   { type: '处理中', count: dashboard.value.processing, trend: `+${randomInt(2, 8)} 单` },
   { type: '已完成', count: dashboard.value.completed, trend: `+${randomInt(10, 25)} 单` },
   { type: '已取消', count: dashboard.value.cancelled, trend: `-${randomInt(1, 4)} 单` },
+]);
+
+// 销量排名
+const productColumns = [
+  { dataIndex: 'name', title: '商品名称' },
+  { dataIndex: 'count', title: '销售量' },
+  { dataIndex: 'trend', title: '较昨日' },
+];
+
+const productStats = computed(() => [
+  { name: '桶装水', count: dashboard.value.orders, trend: `+${randomInt(10, 25)} 单` },
+  { name: '饮水机', count: dashboard.value.orders, trend: `+${randomInt(20, 40)} 单` },
+  { name: '纸杯耗材', count: dashboard.value.orders, trend: `+${randomInt(5, 15)} 单` },
+  { name: '配件耗材', count: dashboard.value.orders, trend: `+${randomInt(10, 25)} 单` },
+  { name: '促销礼品', count: dashboard.value.orders, trend: `+${randomInt(5, 15)} 单` },
 ]);
 
 const orderChartRef = ref(null);

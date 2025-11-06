@@ -11,6 +11,7 @@ import {
   FormOutlined,
   AreaChartOutlined,
   FileSearchOutlined,
+  FolderOutlined,
 } from '@ant-design/icons-vue';
 
 export const adminMenus = [
@@ -150,6 +151,14 @@ export const adminMenus = [
     path: 'system-logs',
     icon: FileSearchOutlined,
     component: () => import('@/views/system/SystemLogs.vue'),
+  },
+  {
+    key: 'Assets',
+    label: '资产管理',
+    routeName: 'Assets',
+    path: 'assets',
+    icon: FolderOutlined,
+    component: () => import('@/views/assets/Assets.vue'),
   },
   {
     key: 'TableDemo',

@@ -85,12 +85,12 @@ router.beforeEach(async (to, from, next) => {
     return next();
   }
 
-  if (!userStore.isAuthenticated) {
-    return next({
-      path: '/login/scan',
-      query: { redirect: to.fullPath },
-    });
-  }
+  // if (!userStore.isAuthenticated) {
+  //   return next({
+  //     path: '/login/scan',
+  //     query: { redirect: to.fullPath },
+  //   });
+  // }
 
   try {
     if (!userStore.profile && !userStore.loading) {
