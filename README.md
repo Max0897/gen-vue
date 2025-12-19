@@ -2,6 +2,8 @@
 
 基于 Vue 3 + Vite 搭建的后台管理前端项目，集成 Ant Design Vue 组件库，使用 Pinia 管理全局状态、Vue Router 管理路由，并通过 Axios 进行接口请求封装。
 
+- 在线体验链接：http://gen-vue.bucking.cn/
+
 ## 技术栈
 
 - Vue 3 & Vite：现代化组合，提供优秀的开发体验与构建性能。
